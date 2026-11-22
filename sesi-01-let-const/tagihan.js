@@ -28,5 +28,31 @@ const tagihan = pemakaian * tarifPerKwh;
 
 const tagihanBulat = Math.round(tagihan);
 
-console.log(`Pemakaian : ${pemakaian} Kwh`);
+const persenPPj = 0.03;
+const PPJ = Math.round(tagihan * persenPPj);
+
+const rataRataHarian = pemakaian / 30;
+
+
+const biayaAdmin = 2500;
+const totalBayar = tagihanBulat + PPJ + biayaAdmin;
+
+
+const uangBayar = 400000;
+const Kembalian = uangBayar - totalBayar;
+
+
+console.log("--- Rincian Tagihan ---");
+console.log("Pemakaian :", pemakaian, "kwh");
+console.log(`Rata-rata : ${rataRataHarian.toFixed(1)} kWh/hari`);
 console.log(`Tagihan : Rp${tagihanBulat.toLocaleString("id-ID")}`);
+console.log(`PPJ (3%) : Rp${PPJ.toLocaleString("id-ID")}`);
+console.log(`Biaya Admin : Rp${biayaAdmin.toLocaleString("id-ID")}`);
+console.log(`total Bayar: Rp${totalBayar.toLocaleString("id-ID")}`);
+console.log(`Uang Bayar : Rp${uangBayar.toLocaleString("id-ID")}`);
+console.log(`Uang Kembalian : Rp${Kembalian.toLocaleString("id-ID")}`);
+
+
+
+
+
