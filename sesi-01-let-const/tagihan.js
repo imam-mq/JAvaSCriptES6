@@ -52,6 +52,24 @@ console.log(`total Bayar: Rp${totalBayar.toLocaleString("id-ID")}`);
 console.log(`Uang Bayar : Rp${uangBayar.toLocaleString("id-ID")}`);
 console.log(`Uang Kembalian : Rp${Kembalian.toLocaleString("id-ID")}`);
 
+const idCari = process.argv[2];
+console.log("ID yang di cari", idCari);
+
+const dataPelanggan = {
+    "532110012345" : { nama: "Imam Mubaraq", daya: 1300, meterAwal: 1450, meterAkhir: 1703 },
+    "532110067890" : { nama: "Mubaraq Imam", daya: 900, meterAwal: 3200, meterAkhir: 3380 },
+
+};
+
+const pelanggan = dataPelanggan[idCari];
+if (idCari === undefined) {
+    console.log("masukan id pelanggan")
+} else if (pelanggan === undefined) {
+    console.log(`ID pelanggan ${idCari} tidak ketemu`);
+} else {
+    console.log(`pelanggan : ${pelanggan.nama}`);
+}
+
 
 
 
